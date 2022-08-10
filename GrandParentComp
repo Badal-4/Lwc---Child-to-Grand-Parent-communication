@@ -1,0 +1,31 @@
+<template>
+
+    <div class="slds-m-around_large">
+
+        In grand Parent {grandParentMsg}
+
+        <c-parent-comp onclickevnt={handleEvt}></c-parent-comp>
+
+    </div>
+
+   
+
+</template>
+
+import { LightningElement } from 'lwc';
+
+
+
+export default class GrandParent extends LightningElement {
+
+    grandParentMsg ;
+
+    handleEvt(event){
+
+        alert('hhhhhhhhhh')
+
+        this.grandParentMsg = event.detail;
+
+    }
+
+}
