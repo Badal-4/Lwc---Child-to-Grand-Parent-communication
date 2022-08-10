@@ -1,0 +1,31 @@
+<template>
+
+  <div class="slds-m-around_large">
+
+      In Parent {test}
+
+      <c-child-comp onclickevnt={handleEvent}></c-child-comp>
+
+     
+
+  </div>
+
+
+
+</template>
+
+import { LightningElement ,api} from 'lwc';
+
+
+
+export default class AssignmentParent extends LightningElement {
+
+    @api test;
+
+    handleEvent(event){
+
+        this.test=event.detail;
+       
+
+}
+}
