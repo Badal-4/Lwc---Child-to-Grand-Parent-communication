@@ -1,0 +1,35 @@
+<template>
+
+  <div class="slds-m-around_large">
+
+      inside Child
+
+      <lightning-button label="Click Me" value="click me" onclick={handleClick}></lightning-button>
+
+  </div>
+
+</template>
+
+import { LightningElement } from 'lwc';
+
+
+
+export default class AssignmentChild extends LightningElement {
+
+    handleClick(){
+
+        const event = new CustomEvent('clickevnt', {
+
+            detail: 'Value of Child',
+
+             bubbles : true,                  
+
+             composed : true                    
+
+        });
+
+        this.dispatchEvent(event);
+
+    }
+
+}
